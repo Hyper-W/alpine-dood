@@ -1,0 +1,18 @@
+services:
+  alpine-dood:
+    build:
+      context: .
+      args:
+        - USER=${USER:-user} # Your User Name
+        - USER_ID=${USER_ID:-1000} # Your User ID
+        - GROUP_ID=${GROUP_ID:-1000} # Your GROUP ID
+    ports:
+      - 3000:3000
+    container_name: alpine-dood
+    image: alpine-dood
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+    tty: true
+    command: sh
