@@ -16,3 +16,5 @@ RUN apk update && apk add --no-cache docker-cli docker-cli-compose docker-cli-bu
 ENV PATH=$PATH:/usr/libexec/docker/cli-plugins/
 
 USER ${USER}
+
+WORKDIR /home/${USER}
